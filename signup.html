@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>News-注册页</title>
+	<link rel="stylesheet" href="css/form.css" />
+		<link rel="icon" href="images/favicon2.gif" />
+
+</head>
+<body>
+<header>
+	<a href="index.html"><img src="images/logo.png" alt=""></a>
+注册——天津师范大学新闻网
+</header>
+	<form id="signup" action="index.html">
+		<div>标记：“ <span>*</span> ”，为必填项</div>
+
+		<div><label for="username">昵称：</label><input type="text" name="username" id="username" placeholder="请输入昵称" /></div>
+		<div><label for="useremail">邮箱：</label><span>*</span><input type="email" name="useremail" id="useremail" placeholder="请输入邮箱" required/></div>
+		<div><label for="userpassword">密码：</label><span>*</span><input type="password" name="userpassword" id="userpassword" placeholder="请输入密码" maxlength="16" required/></div>
+		<div><label for="again">再次输入密码：</label><span>*</span><input type="password" name="again" id="again" placeholder="请再次输入密码" maxlength="16" required/></div>
+		<div><label for="userques">请验证问题：</label><span>*</span><input type="number" name="userques" id="userques" placeholder="1+9=?" min="1" max="10" required/></div>
+		<p>
+			<input type="checkbox" id="choice" />我已经阅读并同意<a href="#">服务条款</a>以及<a href="#">法律声明</a>。我将好好学习并发奋图强，秉承真实，中正，有效的新闻价值观致力于改善国内媒体界。
+		</p>
+		<p>
+			<a href="signin.html">已有账号了？请登录</a><input type="submit" id="submit" value="注册">
+		
+		</p>
+		
+				<span class="clear"></span>
+
+		
+		
+	</form>
+	<script>
+	function init(){
+		var userques = document.getElementById('userques');
+	
+    var userpassword = document.getElementById('userpassword');
+    var again = document.getElementById('again');
+    var choice = document.getElementById('choice');
+    var submit = document.getElementById('submit');
+
+userpassword.onchange=function(){
+	var num=this.value.length;
+	if(num<12 && num>0){
+		alert('亲，密码至少为12位哦！')
+		this.value="";
+	}
+};
+again.onchange=function(){
+	var num=this.value,init=userpassword.value;
+	if(num!==init){
+		alert('亲，您两次输入的密码不匹配哦!');
+				this.value="";
+
+	}
+};
+     userques.onchange = function() {
+        var num = this.value;
+        var len=num.length;
+        if (num !=10 && len>0) {
+        	console.log(num)
+            alert('回答错咯，请重新输入！')
+            		this.value="";
+
+        }
+    };
+	}
+submit.onclick=function(){
+
+	if(!choice.checked){
+		alert('不赞同服务条款将不提供服务哦！')
+		return false;
+	}
+}
+		window.onload=init();
+	</script>
+</body>
+</html>

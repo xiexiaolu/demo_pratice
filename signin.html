@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>News-登录页</title>
+	<link rel="stylesheet" href="css/form.css" />
+		<link rel="icon" href="images/favicon2.gif" />
+
+</head>
+<body>
+<header>
+	<a href="index.html"><img src="images/logo.png" alt=""></a>
+登录——天津师范大学新闻网
+</header>
+	<form action="index.html">
+		<div>标记：“ <span>*</span> ”，为必填项</div>
+		<div><label for="username">昵称：</label><input type="text" name="username" id="username" placeholder="请输入用户名" /></div>
+		<div><label for="useremail">邮箱：</label><span>*</span><input type="email" name="useremail" id="useremail" placeholder="请输入邮箱" required/></div>
+		<div><label for="userpassword">密码：</label><span>*</span><input type="password" name="userpassword" id="userpassword" placeholder="请输入密码" maxlength="16" required/></div>
+		<p>
+			<input type="checkbox"  />记住我（请在私人计算机上使用此功能）
+		</p>
+		<p>
+			<input type="submit" id="submit"  value="登录" />
+			<button><a href="signup.html">注册</a></button>
+		</p>
+		<span class="clear"></span>
+		
+		
+		
+	</form>
+	<script>
+	function init(){
+	
+    var userpassword = document.getElementById('userpassword');
+    var choice = document.getElementById('choice');
+    var submit = document.getElementById('submit');
+
+userpassword.onchange=function(){
+	var num=this.value.length;
+	if(num<12 && num>0){
+		alert('亲，密码至少为12位哦！')
+		this.value="";
+	}
+};
+window.onload=init();
+	</script>
+</body>
+</html>

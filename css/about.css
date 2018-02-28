@@ -1,0 +1,33 @@
+
+#menu_show{
+	background:#FFF;
+	padding:2em;
+		border-radius:10px;
+
+}
+#menu_show p{
+	width:100%;
+	text-align:left;
+	border-left:10px solid #fd4a13;
+	padding-left:40px;
+	line-height:50px;
+	 background: #0b468c;
+margin:2em 0;
+}
+.badge img{
+	display:block;
+	width:50%;
+	height:auto;
+	margin:auto;
+	text-align:center;
+}
+.badge ol>li{
+	list-style-type:decimal;
+	text-indent:2%;
+	margin:2em;
+}
+.badge ol>li::first-letter{
+	font-size:40px;
+	color: #0b468c;
+	text-shadow: 2px 2px 3px #fd4a13;
+}
